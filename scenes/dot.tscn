@@ -1,0 +1,82 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://script/dot1.gd" type="Script" id=1]
+[ext_resource path="res://images/dot.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 387.495, 605.726 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "circle"
+length = 8.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 4, 6.1, 7.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 87.2754, 26.371 ), Vector2( 3.52145, 74.2304 ), Vector2( -115.753, 1.3196 ), Vector2( -7.69559, -85.4256 ), Vector2( 88.4562, -33.3352 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2, 4, 6.1, 7.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 84.1279, 21.6863 ), Vector2( 2.99121, 72.5369 ), Vector2( -116.283, -2.24342 ), Vector2( -7.85194, -90.4842 ), Vector2( 88.7131, -41.4834 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 13.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7, 1.4, 2.3, 3.1, 4, 4.8, 5.6, 6.5, 7.4, 8.2, 9.1, 10, 11, 11.7, 12.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -0.591454, 2.06742 ), Vector2( 200.085, 7.47648 ), Vector2( -0.591454, 2.06742 ), Vector2( 131.66, 112.683 ), Vector2( -0.591454, 2.06742 ), Vector2( 2.38354, 139.999 ), Vector2( -0.591454, 2.06742 ), Vector2( -119.492, 118.725 ), Vector2( -0.591454, 2.06742 ), Vector2( -192.777, 4.31083 ), Vector2( -0.591454, 2.06742 ), Vector2( -146.413, -130.294 ), Vector2( -0.591454, 2.06742 ), Vector2( -0.217552, -177.779 ), Vector2( 3.46805, 1.21277 ), Vector2( 186.377, -180.361 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.7, 1.4, 2.3, 3.1, 4, 4.8, 5.6, 6.5, 7.4, 8.2, 9.1, 10, 11, 11.7, 12.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 200.947, 5.94997 ), Vector2( 0, 0 ), Vector2( 130.629, 111.968 ), Vector2( 0, 0 ), Vector2( 0.270447, 137.931 ), Vector2( 0, 0 ), Vector2( -119.649, 117.031 ), Vector2( 0, 0 ), Vector2( -192.185, 2.24341 ), Vector2( 0, 0 ), Vector2( -146.943, -136.474 ), Vector2( 0, 0 ), Vector2( 0.747803, -184.707 ), Vector2( 2.88438, -8.01219 ), Vector2( 187.111, -183.532 ) ]
+}
+
+[node name="dot" type="Area2D"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 88.4562, -33.3352 )
+scale = Vector2( 0.04, 0.04 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 88.7131, -41.4834 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="anime" type="AnimationPlayer" parent="."]
+anims/circle = SubResource( 2 )
+anims/default = SubResource( 3 )
+

@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://script/GameOver.gd" type="Script" id=1]
+[ext_resource path="res://images/gameover.jpg" type="Texture" id=2]
+[ext_resource path="res://WP DOMINO novel Bold.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+outline_size = 16
+outline_color = Color( 0.12549, 0.0941176, 0.0941176, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 80
+outline_size = 12
+outline_color = Color( 0.121569, 0.0745098, 0.0745098, 1 )
+font_data = ExtResource( 3 )
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+
+[node name="Mainmenu" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 285.674
+margin_top = 376.138
+margin_right = 1181.67
+margin_bottom = 491.138
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Mainmenu"]
+margin_right = 895.0
+margin_bottom = 115.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Mainmenu/HBoxContainer"]
+margin_right = 578.0
+margin_bottom = 115.0
+
+[node name="Restart" type="Button" parent="Mainmenu/HBoxContainer/HBoxContainer"]
+margin_right = 349.0
+margin_bottom = 115.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_hover = Color( 0.227451, 0.815686, 0.235294, 1 )
+text = "RESTART"
+flat = true
+
+[node name="Exit" type="Button" parent="Mainmenu/HBoxContainer/HBoxContainer"]
+margin_left = 353.0
+margin_right = 578.0
+margin_bottom = 115.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_hover = Color( 0.815686, 0.180392, 0.180392, 1 )
+text = "  EXIT"
+flat = true
+
+[connection signal="pressed" from="Mainmenu/HBoxContainer/HBoxContainer/Restart" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="Mainmenu/HBoxContainer/HBoxContainer/Exit" to="." method="_on_Exit_pressed"]

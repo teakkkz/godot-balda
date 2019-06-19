@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/BNK48.wav-b3487fc59ce73de9ec324c855096146a.sample"
+
+[deps]
+
+source_file="res://sound/BNK48.wav"
+dest_files=[ "res://.import/BNK48.wav-b3487fc59ce73de9ec324c855096146a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
